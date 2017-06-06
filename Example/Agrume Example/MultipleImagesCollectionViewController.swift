@@ -37,6 +37,7 @@ final class MultipleImagesCollectionViewController: UICollectionViewController {
 
   override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     let agrume = Agrume(images: images, startIndex: indexPath.row, backgroundBlurStyle: .light)
+    agrume.useToolbar = true
     agrume.didScroll = { [unowned self] index in
       self.collectionView?.scrollToItem(at: IndexPath(row: index, section: 0), at: [], animated: false)
     }
